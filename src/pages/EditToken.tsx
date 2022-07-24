@@ -13,14 +13,14 @@ const EditToken = (props: Props) => {
     
     useEffect(() => {
             const getToken = async () => {
-                const {data} = await axios.get("http://localhost:3001/tokens/1");
+                const {data} = await axios.get("http://localhost:8000/tokens/1");
                 reset(data)
             }
             getToken()
     }, [])
     const onEdit:SubmitHandler<any> = async (data:any) => {
         try {
-            await axios.put("http://localhost:3001/tokens/1", data);
+            await axios.put("http://localhost:8000/tokens/1", data);
             toastr.success("Thành công!")
             navigate('/admin/list')
         } catch (error) {

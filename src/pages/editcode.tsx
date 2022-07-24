@@ -13,14 +13,14 @@ const EditCode = (props: Props) => {
     const {id} = useParams()
     useEffect(() => {
             const getCode = async () => {
-                const {data} = await axios.get("http://localhost:3001/codes/" +id);
+                const {data} = await axios.get("http://localhost:8000/codes/" +id);
                 reset(data)
             }
             getCode()
     }, [])
     const onAdd:SubmitHandler<any> = async (data:any) => {
         try {
-            await axios.put("http://localhost:3001/codes/"+id, data);
+            await axios.put("http://localhost:8000/codes/"+id, data);
             toastr.success("Thành công!")
             navigate('/admin')
         } catch (error) {

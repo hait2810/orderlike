@@ -15,12 +15,12 @@ const HomePage = (_props: Props) => {
     const [code,setCode] = useState<any[]>([]);
     useEffect(() => {
         const getToken = async () => {
-            const {data} = await axios.get("http://localhost:3001/tokens/1");
+            const {data} = await axios.get("http://localhost:8000/tokens/1");
     setToken(data.name) 
         }
         getToken()  
         const getCode = async () => {
-            const {data:ma} = await axios.get("http://localhost:3001/codes")
+            const {data:ma} = await axios.get("http://localhost:8000/codes")
                 setCode(ma)
         }
         getCode()
