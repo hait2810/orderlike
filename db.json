@@ -1,0 +1,15 @@
+{
+  "tokens": [
+    {
+      "id": 1,
+      "name": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTY0MjksInVzZXJuYW1lIjoienhjenhjIiwibW9uZXkiOjEwMDAwLCJ0eXBlIjoxNiwiY3JlYXRlX2F0IjoiMTY1ODQ2MDAwOSIsImVtYWlsIjoienhjenhjQGdtYWlsLmNvbSIsImZhY2Vib29rX2lkIjoiNCIsInBob25lIjoiMDk4NzU1NTIyMiIsIm5hbWUiOiJtZW1iZXIiLCJwZXJjZW50IjowLCJub3RlcyI6Ik1lbWJlciAoTuG6oXAgNTAwayBsw6puIMSR4bqhaSBsw70pIiwidXBkYXRlX2F0IjpudWxsLCJ0aWVuX25hcCI6MTAwMDAsImlhdCI6MTY1ODU3MzcxNywiZXhwIjoxNjkwMTMwNjQzfQ.KrI0X-GLfNrxWtgC83VnUt2SiMOHU6flbH9Y6-Y_-ZY"
+    }
+  ],
+  "codes": [
+    {
+      "id": 1,
+      "name": "50like",
+      "limit": "50"
+    }
+  ]
+}
