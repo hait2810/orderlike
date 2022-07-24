@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "start": "npm run dev",
-    "json-server": "json-server --watch db.json --port 8000",
+    "json": "json-server --watch db.json --port 8000",
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview"
