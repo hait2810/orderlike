@@ -9,7 +9,7 @@ const AdminPage = (props: Props) => {
     const [code, setCode] = useState<any[]>([])
         useEffect(() => {
             const getCode = async () => {
-                const {data} = await axios.get("http://localhost:8000/codes");
+                const {data} = await axios.get("https://bufflikea.herokuapp.com/tokens");
                 setCode(data);
                 console.log(data);
                 
@@ -19,7 +19,7 @@ const AdminPage = (props: Props) => {
         const removeCode = async (id:any) => {
                 const confirm = window.confirm("Bạn có chắc chắn muống xoá không?");
                 if(confirm) {
-                    const {data} = await axios.delete("http://localhost:8000/codes/"+id);
+                    const {data} = await axios.delete("https://bufflikea.herokuapp.com/tokens"+id);
                     setCode(code.filter(item => item.id !== id))
 
                 }
@@ -48,7 +48,7 @@ const AdminPage = (props: Props) => {
         <td>{item.name}</td>
         <td>{item.limit}</td>
         <td><NavLink className="btn btn-info" to={`editcode/${item.id}`}>Sửa</NavLink></td>
-        <td><button type="submit" className='btn btn-info' onClick={() => removeCode(item.id!)}>Xoá</button></td>
+        <td><button type="submit" className='btn btn-info' onClick={() => removeCode(item._id!)}>Xoá</button></td>
       </tr>;
      })}
    

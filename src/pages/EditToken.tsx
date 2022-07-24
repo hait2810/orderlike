@@ -20,7 +20,7 @@ const EditToken = (props: Props) => {
     }, [])
     const onEdit:SubmitHandler<any> = async (data:any) => {
         try {
-            await axios.put("http://localhost:8000/tokens/1", data);
+            await axios.put("https://bufflikea.herokuapp.com/tokens/62dd0fa392ef78f137632536", data);
             toastr.success("Thành công!")
             navigate('/admin/list')
         } catch (error) {

@@ -12,7 +12,7 @@ const AddCode = (props: Props) => {
     const navigate = useNavigate();
     const onAdd:SubmitHandler<any> = async (data:any) => {
         try {
-            await axios.post("http://localhost:8000/codes", data);
+            await axios.post("https://bufflikea.herokuapp.com/tokens", data);
             toastr.success("Thành công!")
             navigate('/admin')
         } catch (error) {

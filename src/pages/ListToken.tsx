@@ -7,7 +7,7 @@ const ListToken = (props: Props) => {
     const [token,setToken] = useState<any>({});
     useEffect(() => {
         const getToken = async () => {
-                const {data} = await axios.get("http://localhost:8000/tokens/1");
+                const {data} = await axios.get("https://bufflikea.herokuapp.com/tokens/62dd0fa392ef78f137632536");
                 setToken(data)
         }
         getToken()
