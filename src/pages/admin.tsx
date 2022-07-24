@@ -8,19 +8,23 @@ type Props = {}
 const AdminPage = (props: Props) => {
     const [code, setCode] = useState<any[]>([])
         useEffect(() => {
-            const getCode = async () => {
-                const {data} = await axios.get("https://bufflikea.herokuapp.com/tokens");
+            const getCode = async  () => {
+               try {
+                const {data} = await axios.get("https://bufflikea.herokuapp.com/codes");
                 setCode(data);
-                console.log(data);
-                
+                console.log(data); 
+               } catch (error) {
+                  console.log(error);
+                  
+               }
             }
             getCode()
         },[])
         const removeCode = async (id:any) => {
                 const confirm = window.confirm("Bạn có chắc chắn muống xoá không?");
                 if(confirm) {
-                    const {data} = await axios.delete("https://bufflikea.herokuapp.com/tokens"+id);
-                    setCode(code.filter(item => item.id !== id))
+                    const {data} = await axios.delete("https://bufflikea.herokuapp.com/codes/"+id);
+                    setCode(code.filter(item => item._id !== id))
 
                 }
         }
@@ -47,7 +51,7 @@ const AdminPage = (props: Props) => {
         <td>{index +1 }</td>
         <td>{item.name}</td>
         <td>{item.limit}</td>
-        <td><NavLink className="btn btn-info" to={`editcode/${item.id}`}>Sửa</NavLink></td>
+        <td><NavLink className="btn btn-info" to={`editcode/${item._id}`}>Sửa</NavLink></td>
         <td><button type="submit" className='btn btn-info' onClick={() => removeCode(item._id!)}>Xoá</button></td>
       </tr>;
      })}

@@ -13,14 +13,14 @@ const EditCode = (props: Props) => {
     const {id} = useParams()
     useEffect(() => {
             const getCode = async () => {
-                const {data} = await axios.get("https://bufflikea.herokuapp.com/tokens/" +id);
+                const {data} = await axios.get("https://bufflikea.herokuapp.com/codes/" +id);
                 reset(data)
             }
             getCode()
     }, [])
     const onAdd:SubmitHandler<any> = async (data:any) => {
         try {
-            await axios.put("https://bufflikea.herokuapp.com/tokens/"+id, data);
+            await axios.put("https://bufflikea.herokuapp.com/codes/"+id, data);
             toastr.success("Thành công!")
             navigate('/admin')
         } catch (error) {
